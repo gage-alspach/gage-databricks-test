@@ -1,0 +1,26 @@
+bundle:
+  name: ams_demo
+  uuid: 3a782bb1-d467-4ff3-af8d-5aa480ab0539
+
+include:
+  - resources/*.yml
+
+sync:
+  paths:
+    - ../../src/data_platform/lakeflow/ams_demo
+
+variables:
+  catalog:
+    description: The catalog to use
+  schema:
+    description: The schema to use
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-ccde382d-7dc9.cloud.databricks.com
+    variables:
+      catalog: workspace
+      schema: ${workspace.current_user.short_name}
