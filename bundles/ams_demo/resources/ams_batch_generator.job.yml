@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    ams_batch_generator:
+      name: ams_batch_generator
+
+      schedule:
+        quartz_cron_expression: "0 0/5 * * * ?"
+        timezone_id: "America/Los_Angeles"
+        pause_status: UNPAUSED
+
+      max_concurrent_runs: 1
+
+      tasks:
+        - task_key: generate_batch
+          notebook_task:
+            notebook_path: ../../../src/data_platform/lakeflow/ams_demo/generator/batch_generator.ipynb

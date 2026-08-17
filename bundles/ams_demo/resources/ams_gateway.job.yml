@@ -1,7 +1,7 @@
 resources:
   jobs:
-    ams_demo_gateway:
-      name: ams_demo_gateway
+    ams_gateway:
+      name: ams_gateway
 
       max_concurrent_runs: 1
 

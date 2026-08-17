@@ -1,0 +1,13 @@
+resources:
+  pipelines:
+    ams_gold_etl:
+      name: ams_gold_etl
+
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+
+      serverless: true
+
+      libraries:
+        - glob:
+            include: ../../../src/data_platform/lakeflow/ams_demo/gold/**
