@@ -1,15 +1,15 @@
 resources:
   jobs:
-    ams_streaming:
-      name: ams_streaming
+    streaming:
+      name: streaming
 
       max_concurrent_runs: 1
 
       continuous:
-        pause_status: UNPAUSED
+        pause_status: PAUSED
         task_retry_mode: ON_FAILURE
 
       tasks:
         - task_key: refresh_streaming_pipeline
           pipeline_task:
-            pipeline_id: ${resources.pipelines.ams_streaming_etl.id}
+            pipeline_id: ${resources.pipelines.streaming_etl.id}

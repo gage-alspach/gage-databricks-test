@@ -7,7 +7,7 @@ include:
 
 sync:
   paths:
-    - ../../src/data_platform/lakeflow/ams_demo
+    - ../../src/data_platform/lakeflow/shipment_demo/*
 
 variables:
   catalog:
@@ -17,7 +17,11 @@ variables:
 
 targets:
   dev:
-    mode: development
+    presets:
+      name_prefix: ''
+      pipelines_development: false
+      jobs_max_concurrent_runs: 1
+    mode: production
     default: true
     workspace:
       host: https://dbc-ccde382d-7dc9.cloud.databricks.com

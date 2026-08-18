@@ -1,7 +1,7 @@
 resources:
   pipelines:
-    ams_streaming_etl:
-      name: ams_streaming_etl
+    streaming_etl:
+      name: streaming_etl
 
       catalog: ${var.catalog}
       schema: ${var.schema}
@@ -10,4 +10,4 @@ resources:
 
       libraries:
         - glob:
-            include: ../../../src/data_platform/lakeflow/ams_demo/streaming/**
+            include: ../../../src/data_platform/lakeflow/shipment_demo/streaming/**

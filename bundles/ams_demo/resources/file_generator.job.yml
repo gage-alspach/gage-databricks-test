@@ -1,0 +1,15 @@
+resources:
+  jobs:
+    file_stream_generator:
+      name: file_stream_generator
+
+      continuous:
+        pause_status: PAUSED
+        task_retry_mode: ON_FAILURE
+
+      max_concurrent_runs: 1
+
+      tasks:
+        - task_key: generate_files
+          notebook_task:
+            notebook_path: ../../../src/data_platform/lakeflow/shipment_demo/generator/file_generator.ipynb
